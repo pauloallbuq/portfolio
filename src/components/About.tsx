@@ -2,8 +2,8 @@ import { MaskLines, Reveal } from './Reveal';
 import { site } from '../config/site';
 
 const experience = [
-  { period: 'Atual', role: 'Designer de Comunicação Direta & CRM', place: 'Comunicação visual para casas de aposta', detail: 'E-mail, pop-up, inbox, push e SMS. Templates estruturados em HTML e criação de artes na plataforma Smartico.' },
-  { period: '1 ano', role: 'Designer Gráfico & Digital', place: 'Agência Vision', detail: 'Identidades visuais, peças publicitárias, mídias sociais e motion design.' },
+  { period: 'Atual', role: 'Designer de Comunicação Direta & CRM', place: 'Lucky Gaming', detail: 'E-mail, pop-up, inbox, push e SMS. Templates estruturados em HTML e criação de artes na plataforma Smartico.' },
+  { period: '1 ano', role: 'Designer Gráfico & Digital', place: 'Agência de marketing', detail: 'Identidades visuais, peças publicitárias, mídias sociais e motion design.' },
   { period: '4 anos', role: 'Designer Gráfico e Operador de Plotagem', place: 'Empresa do setor gráfico', detail: 'Fluxo completo: concepção da arte, fechamento de arquivos, pré-impressão e plotagem.' },
 ];
 
@@ -32,7 +32,7 @@ export function About() {
             </div>
           )}
           <div className="about-number" aria-hidden="true">
-            08
+            06
           </div>
           <p className="about-number-label">anos de design gráfico</p>
         </Reveal>
@@ -40,7 +40,7 @@ export function About() {
         <div className="about-text">
           <Reveal>
             <p className="lead">
-              Sou {site.fullName}, designer gráfico com 8 anos de experiência. Hoje me dedico à comunicação direta e ao CRM, criando
+              Sou {site.fullName}, designer gráfico com 6 anos de experiência. Hoje me dedico à comunicação direta e ao CRM, criando
               as peças que chegam ao usuário por <span className="hl">e-mail, pop-up, inbox, push e SMS</span>.
             </p>
           </Reveal>

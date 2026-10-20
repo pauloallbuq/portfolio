@@ -40,7 +40,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.75, duration: 0.9, ease }}
         >
-          Há <strong>8 anos</strong> transformando estratégias em comunicação visual. Unindo design, movimento e tecnologia para criar
+          Há <strong>6 anos</strong> transformando estratégias em comunicação visual. Unindo design, movimento e tecnologia para criar
           experiências digitais.
         </motion.p>
 
