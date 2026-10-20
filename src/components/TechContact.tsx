@@ -73,14 +73,7 @@ export function Tech() {
 }
 
 function SocialLink({ href, label, external = true }: { href: string; label: string; external?: boolean }) {
-  if (!href) {
-    return (
-      <span className="social is-empty" aria-disabled="true" title={`Configure em src/config/site.ts`}>
-        <span>{label}</span>
-        <small>a configurar</small>
-      </span>
-    );
-  }
+  if (!href) return null;
   return (
     <a className="social" href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
       <span>{label}</span>
@@ -90,7 +83,7 @@ function SocialLink({ href, label, external = true }: { href: string; label: str
 }
 
 export function Contact() {
-  const { email, linkedin, github } = site.contact;
+  const { email, linkedin, github, whatsapp } = site.contact;
   const [copied, setCopied] = useState(false);
 
   const copy = async () => {
@@ -129,6 +122,7 @@ export function Contact() {
 
         <Reveal delay={0.25} className="socials">
           <SocialLink href={linkedin} label="LinkedIn" />
+          <SocialLink href={whatsapp ? `https://wa.me/${whatsapp}` : ''} label="WhatsApp" />
           <SocialLink href={github} label="GitHub" />
           <SocialLink href={email ? `mailto:${email}` : ''} label="E-mail" external={false} />
         </Reveal>

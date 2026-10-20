@@ -1,74 +1,14 @@
-import { useEffect } from 'react';
-import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 import { MaskLines } from './Reveal';
 import { site } from '../config/site';
 
 const YEAR = new Date().getFullYear();
 const ease = [0.16, 1, 0.3, 1] as const;
 
-function HeroVisual() {
-  const reduce = useReducedMotion();
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-  const sx = useSpring(mx, { stiffness: 60, damping: 18 });
-  const sy = useSpring(my, { stiffness: 60, damping: 18 });
-  const rotX = useTransform(sy, [-1, 1], [10, -10]);
-  const rotY = useTransform(sx, [-1, 1], [-14, 14]);
-  const coreX = useTransform(sx, [-1, 1], [-18, 18]);
-  const coreY = useTransform(sy, [-1, 1], [-18, 18]);
-  const tagX = useTransform(sx, [-1, 1], [26, -26]);
-  const tagY = useTransform(sy, [-1, 1], [20, -20]);
-
-  useEffect(() => {
-    if (reduce || window.matchMedia('(pointer: coarse)').matches) return;
-    const onMove = (e: PointerEvent) => {
-      mx.set((e.clientX / window.innerWidth) * 2 - 1);
-      my.set((e.clientY / window.innerHeight) * 2 - 1);
-    };
-    window.addEventListener('pointermove', onMove, { passive: true });
-    return () => window.removeEventListener('pointermove', onMove);
-  }, [reduce, mx, my]);
-
-  return (
-    <motion.div
-      className="hero-visual"
-      aria-hidden="true"
-      initial={{ opacity: 0, scale: reduce ? 1 : 0.92 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1.6, delay: 0.3, ease }}
-    >
-      <motion.div className="machine" style={{ rotateX: rotX, rotateY: rotY }}>
-        <div className="ring ring-1" />
-        <div className="ring ring-2" />
-        <div className="ring ring-3" />
-        <motion.div className="core" style={{ x: coreX, y: coreY }}>
-          <span className="core-shine" />
-        </motion.div>
-        <div className="orbit">
-          <span className="satellite" />
-        </div>
-      </motion.div>
-
-      <motion.div className="hero-tags" style={{ x: tagX, y: tagY }}>
-        <span className="tag tag-a">Design gráfico</span>
-        <span className="tag tag-b">Identidade visual</span>
-        <span className="tag tag-c">Motion</span>
-      </motion.div>
-
-      <svg className="grid-lines" viewBox="0 0 600 600" preserveAspectRatio="none">
-        <line x1="300" y1="0" x2="300" y2="600" />
-        <line x1="0" y1="300" x2="600" y2="300" />
-        <circle cx="300" cy="300" r="3" />
-      </svg>
-    </motion.div>
-  );
-}
-
 export function Hero() {
   const reduce = useReducedMotion();
   return (
     <section className="hero" id="topo" aria-labelledby="hero-title">
-      <HeroVisual />
 
       <div className="hero-meta">
         <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.8 }}>

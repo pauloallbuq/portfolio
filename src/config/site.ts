@@ -20,7 +20,9 @@ export const site = {
 
   contact: {
     email: 'Pr33456@gmail.com', // fonte: currículo
-    linkedin: '', // ex.: https://www.linkedin.com/in/seu-perfil
+    linkedin: 'https://www.linkedin.com/in/paulo-albuquerque-9267a71b9/',
+    whatsapp: '5586994723073', // só números, com DDI e DDD
+    whatsappLabel: '+55 (86) 99472-3073',
     github: '', // ex.: https://github.com/seu-usuario
   },
 

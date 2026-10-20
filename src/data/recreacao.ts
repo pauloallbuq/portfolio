@@ -20,7 +20,6 @@ export const recreacao = {
   screenshots: [
     { src: 'https://i.ibb.co/Z1Hg5NBP/Captura-de-tela-2026-10-19-192722.webp', alt: 'Tela do Recreação Pro' },
     { src: 'https://i.ibb.co/VYbJCFhk/Captura-de-tela-2026-10-19-192638.webp', alt: 'Tela do Recreação Pro' },
-    { src: 'https://i.ibb.co/kgWmfLCs/Captura-de-tela-2026-10-19-192704.webp', alt: 'Tela do Recreação Pro' },
     { src: 'https://i.ibb.co/35WDh0Yf/tela-02.webp', alt: 'Tela do Recreação Pro' },
     { src: 'https://i.ibb.co/JFtQ1kPs/tela-04.webp', alt: 'Tela do Recreação Pro' },
     { src: 'https://i.ibb.co/7xnK0cdp/tela-05.webp', alt: 'Tela do Recreação Pro' },

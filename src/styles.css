@@ -424,10 +424,10 @@ em {
   font-weight: 800;
   font-variation-settings: 'wdth' 62;
   text-transform: uppercase;
-  font-size: clamp(60px, 10vw, 176px);
+  font-size: min(11.4vw, 196px);
   line-height: 0.86;
+  width: 100%;
   letter-spacing: -0.02em;
-  max-width: 11ch;
 }
 .hero-title em {
   color: var(--lime);
@@ -1459,7 +1459,8 @@ em {
 }
 @media (min-width: 700px) {
   .socials {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-auto-flow: column;
   }
   .social + .social {
     border-left: 1.5px solid var(--lime-ink);
